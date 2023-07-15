@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlainDotnetHTTP", "PlainDotnetHTTP\PlainDotnetHTTP.csproj", "{4637D814-DC71-4DBC-A5AA-5142FAC6FF36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyServer", "MyServer\MyServer.csproj", "{946CB22E-B47F-4664-8BBE-55F138BE2DC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4637D814-DC71-4DBC-A5AA-5142FAC6FF36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4637D814-DC71-4DBC-A5AA-5142FAC6FF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4637D814-DC71-4DBC-A5AA-5142FAC6FF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4637D814-DC71-4DBC-A5AA-5142FAC6FF36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946CB22E-B47F-4664-8BBE-55F138BE2DC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946CB22E-B47F-4664-8BBE-55F138BE2DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946CB22E-B47F-4664-8BBE-55F138BE2DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946CB22E-B47F-4664-8BBE-55F138BE2DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
