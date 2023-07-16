@@ -20,9 +20,20 @@ public class Server
 
         while (true)
         {
-            using TcpClient client = await listener.AcceptTcpClientAsync();
+            TcpClient client = await listener.AcceptTcpClientAsync();
+
+            ProcessClient(client);
+        }
+    }
+
+    private async Task ProcessClient(TcpClient client)
+    {
+        using (client)
+        {
             await using NetworkStream networkStream = client.GetStream();
-            
+
+            await Task.Delay(5000);
+
             _handler.Handle(networkStream);
         }
     }
