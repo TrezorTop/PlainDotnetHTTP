@@ -1,10 +1,18 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using MyServer.Interfaces;
 
 namespace MyServer;
 
 public class Server
 {
+    private readonly IHandler _handler;
+
+    public Server(IHandler handler)
+    {
+        _handler = handler;
+    }
+
     public void Start()
     {
         TcpListener listener = new TcpListener(IPAddress.Any, 5000);
@@ -12,19 +20,10 @@ public class Server
 
         while (true)
         {
-            TcpClient client = listener.AcceptTcpClient();
-
+            using TcpClient client = listener.AcceptTcpClient();
             using NetworkStream networkStream = client.GetStream();
-            using StreamReader reader = new StreamReader(networkStream);
-            using StreamWriter writer = new StreamWriter(networkStream);
 
-            string line = reader.ReadLine(); 
-            while (line != string.Empty)
-            {
-                Console.WriteLine(reader.ReadLine());
-            }
-
-            writer.WriteLine("Hello World!");
+            _handler.Handle(networkStream);
         }
     }
 }
