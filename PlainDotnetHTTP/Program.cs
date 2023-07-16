@@ -9,4 +9,4 @@ Server server = new Server(
     new ControllersHandler(typeof(Program).Assembly)
 );
 
-server.Start();
+await server.Start();

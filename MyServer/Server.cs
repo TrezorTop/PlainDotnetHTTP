@@ -13,16 +13,16 @@ public class Server
         _handler = handler;
     }
 
-    public void Start()
+    public async Task Start()
     {
         TcpListener listener = new TcpListener(IPAddress.Any, 5000);
         listener.Start();
 
         while (true)
         {
-            using TcpClient client = listener.AcceptTcpClient();
-            using NetworkStream networkStream = client.GetStream();
-
+            using TcpClient client = await listener.AcceptTcpClientAsync();
+            await using NetworkStream networkStream = client.GetStream();
+            
             _handler.Handle(networkStream);
         }
     }
